@@ -1,4 +1,5 @@
 Summary:	JPEG Scaling Library
+Summary(pl):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
 Version:	0.9.0
 %define	_snap	20050105
@@ -19,22 +20,33 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Epeg is a library which provides facilities for scaling JPEG images
 very quickly.
 
+%description -l pl
+Epeg to biblioteka u³atwiaj±ca bardzo szybkie skalowanie obrazów JPEG.
+
 %package devel
-Summary:	Epeg headers, documentation and test programs
+Summary:	Epeg header files
+Summary(pl):	Pliki nag³ówkowe Epeg
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	libjpeg-devel
 
 %description devel
-Headers, test programs and documentation for Epeg.
+Header files for Epeg.
+
+%description devel -l pl
+Pliki nag³ówkowe Epeg.
 
 %package static
-Summary:	Static libraries
+Summary:	Static Epeg library
+Summary(pl):	Statyczna biblioteka Epeg
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static libraries.
+Static Epeg library.
+
+%description static -l pl
+Statyczna biblioteka Epeg.
 
 %prep
 %setup -q -n %{name}
@@ -50,6 +62,7 @@ Static libraries.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -63,12 +76,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING README
 %attr(755,root,root) %{_bindir}/epeg
-%attr(755,root,root) %{_libdir}/libepeg.so*
+%attr(755,root,root) %{_libdir}/libepeg.so.*.*.*
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libepeg.la
 %attr(755,root,root) %{_bindir}/epeg-config
+%attr(755,root,root) %{_libdir}/libepeg.so
+%{_libdir}/libepeg.la
 %{_includedir}/Epeg*
 
 %files static
