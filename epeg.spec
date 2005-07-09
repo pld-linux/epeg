@@ -1,14 +1,14 @@
 Summary:	JPEG Scaling Library
 Summary(pl):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
-Version:	0.9.0
-%define	_snap	20050105
+Version:	0.9.0.003
+%define	_snap	20050701
 Release:	0.%{_snap}.0.1
 License:	BSD
-Group:		X11/Libraries
+Group:		Libraries
 #Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-Source0:	ftp://ftp.sparky.homelinux.org/pub/e17/%{name}-%{version}-%{_snap}.tar.gz
-# Source0-md5:	3780cd02824944b1d64db8d57869b8fd
+Source0:	ftp://ftp.sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.gz
+# Source0-md5:	2d7073b33eb39d447d2c3cb6db5c1391
 URL:		http://enlightenment.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -53,7 +53,7 @@ Statyczna biblioteka Epeg.
 
 %build
 %{__libtoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -74,7 +74,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING README
+%doc AUTHORS COPYING COPYING-PLAIN INSTALL README
 %attr(755,root,root) %{_bindir}/epeg
 %attr(755,root,root) %{_libdir}/libepeg.so.*.*.*
 
