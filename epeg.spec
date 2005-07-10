@@ -7,7 +7,7 @@ Release:	0.%{_snap}.0.1
 License:	BSD
 Group:		Libraries
 #Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-Source0:	ftp://ftp.sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.gz
+Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.gz
 # Source0-md5:	2d7073b33eb39d447d2c3cb6db5c1391
 URL:		http://enlightenment.org/
 BuildRequires:	autoconf
