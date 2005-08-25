@@ -7,7 +7,7 @@ License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	ad8505bed8deb7049dfa6322ce908f99
-URL:		http://enlightenment.org/
+URL:		http://enlightenment.org/Libraries/Epeg/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel
