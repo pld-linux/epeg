@@ -12,6 +12,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
+Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,11 +22,22 @@ very quickly.
 %description -l pl
 Epeg to biblioteka u³atwiaj±ca bardzo szybkie skalowanie obrazów JPEG.
 
+%package libs
+Summary:	Epeg library
+Summary(pl):	Biblioteka epeg
+Group:		Libraries
+
+%description libs
+Epeg library.
+
+%description libs -l pl
+Biblioteka epeg.
+
 %package devel
 Summary:	Epeg header files
 Summary(pl):	Pliki nag³ówkowe Epeg
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libjpeg-devel
 
 %description devel
@@ -67,13 +79,16 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post libs	-p /sbin/ldconfig
+%postun libs	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING COPYING-PLAIN INSTALL README
 %attr(755,root,root) %{_bindir}/epeg
+
+%files libs
+%defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libepeg.so.*.*.*
 
 %files devel
