@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	static_libs	# don't build static library
+#
 Summary:	JPEG Scaling Library
 Summary(pl):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
@@ -67,7 +71,8 @@ Statyczna biblioteka Epeg.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	%{!?with_static_libs:--disable-static}
 %{__make}
 
 %install
@@ -98,6 +103,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libepeg.la
 %{_includedir}/Epeg*
 
+%if %{with static_libs}
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/libepeg.a
+%endif
