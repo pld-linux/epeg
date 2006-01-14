@@ -5,12 +5,12 @@
 Summary:	JPEG Scaling Library
 Summary(pl):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
-Version:	0.9.0.004
+Version:	0.9.0.005
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	ad8505bed8deb7049dfa6322ce908f99
+# Source0-md5:	0962be0f7f501f355c93aecf8f699ba0
 URL:		http://enlightenment.org/Libraries/Epeg/
 BuildRequires:	autoconf
 BuildRequires:	automake
