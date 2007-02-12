@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	JPEG Scaling Library
-Summary(pl):	Biblioteka do skalowania JPEG-體
+Summary(pl.UTF-8):   Biblioteka do skalowania JPEG-贸w
 Name:		epeg
 Version:	0.9.0.007
 Release:	2
@@ -23,23 +23,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Epeg is a library which provides facilities for scaling JPEG images
 very quickly.
 
-%description -l pl
-Epeg to biblioteka u砤twiaj眂a bardzo szybkie skalowanie obraz體 JPEG.
+%description -l pl.UTF-8
+Epeg to biblioteka u艂atwiaj膮ca bardzo szybkie skalowanie obraz贸w JPEG.
 
 %package libs
 Summary:	Epeg library
-Summary(pl):	Biblioteka epeg
+Summary(pl.UTF-8):   Biblioteka epeg
 Group:		Libraries
 
 %description libs
 Epeg library.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteka epeg.
 
 %package devel
 Summary:	Epeg header files
-Summary(pl):	Pliki nag丑wkowe Epeg
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe Epeg
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	libjpeg-devel
@@ -47,19 +47,19 @@ Requires:	libjpeg-devel
 %description devel
 Header files for Epeg.
 
-%description devel -l pl
-Pliki nag丑wkowe Epeg.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe Epeg.
 
 %package static
 Summary:	Static Epeg library
-Summary(pl):	Statyczna biblioteka Epeg
+Summary(pl.UTF-8):   Statyczna biblioteka Epeg
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static Epeg library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka Epeg.
 
 %prep
