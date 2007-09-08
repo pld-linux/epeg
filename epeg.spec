@@ -5,15 +5,15 @@
 Summary:	JPEG Scaling Library
 Summary(pl.UTF-8):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
-Version:	0.9.0.007
-Release:	2
+Version:	0.9.0.008
+Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	383db51e46d13d986966459e4918d236
+# Source0-md5:	45686c68c894ffa7ff81d6dc6f160095
 URL:		http://enlightenment.org/Libraries/Epeg/
 BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	automake >= 1.4
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 Requires:	%{name}-libs = %{version}-%{release}
@@ -84,12 +84,12 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post libs	-p /sbin/ldconfig
-%postun libs	-p /sbin/ldconfig
+%post	libs	-p /sbin/ldconfig
+%postun	libs	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING COPYING-PLAIN INSTALL README
+%doc AUTHORS COPYING COPYING-PLAIN README
 %attr(755,root,root) %{_bindir}/epeg
 
 %files libs
@@ -101,7 +101,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/epeg-config
 %attr(755,root,root) %{_libdir}/libepeg.so
 %{_libdir}/libepeg.la
-%{_includedir}/Epeg*
+%{_includedir}/Epeg.h
 %{_pkgconfigdir}/epeg.pc
 
 %if %{with static_libs}
