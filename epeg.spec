@@ -12,8 +12,8 @@ Group:		Libraries
 Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
 # Source0-md5:	b6eada50c40f46810530fe85a67f558d
 URL:		http://enlightenment.org/Libraries/Epeg/
-BuildRequires:	autoconf
-BuildRequires:	automake >= 1.4
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1.6
 BuildRequires:	libjpeg-devel
 BuildRequires:	libtool
 Requires:	%{name}-libs = %{version}-%{release}
@@ -84,8 +84,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	libs	-p /sbin/ldconfig
-%postun	libs	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -94,7 +94,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libepeg.so.*
+%attr(755,root,root) %{_libdir}/libepeg.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libepeg.so.0
 
 %files devel
 %defattr(644,root,root,755)
