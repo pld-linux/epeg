@@ -2,15 +2,16 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define		_snap	20080813
 Summary:	JPEG Scaling Library
 Summary(pl.UTF-8):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
-Version:	0.9.1.042
-Release:	1
+Version:	0.9.1.043
+Release:	0.%{_snap}.1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
-# Source0-md5:	b6eada50c40f46810530fe85a67f558d
+Source0:	%{name}-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	a7331984bef4543a6ed1b385ccd7cc0d
 URL:		http://enlightenment.org/Libraries/Epeg/
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -63,7 +64,7 @@ Static Epeg library.
 Statyczna biblioteka Epeg.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_snap}
 
 %build
 %{__libtoolize}
