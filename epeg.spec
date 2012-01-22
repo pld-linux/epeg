@@ -24,8 +24,14 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Epeg is a library which provides facilities for scaling JPEG images
 very quickly.
 
+Note: this library is obsolete; new software uses Evas to scale JPEG
+images.
+
 %description -l pl.UTF-8
 Epeg to biblioteka ułatwiająca bardzo szybkie skalowanie obrazów JPEG.
+
+Uwaga: ta biblioteka jest przestarzała; nowy kod do skalowania obrazów
+JPEG wykorzystuje bibliotekę Evas.
 
 %package libs
 Summary:	Epeg library
