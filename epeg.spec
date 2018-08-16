@@ -3,11 +3,12 @@
 %bcond_without	static_libs	# don't build static library
 #
 %define		_snap	20080813
+%define		rel	4
 Summary:	JPEG Scaling Library
 Summary(pl.UTF-8):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
 Version:	0.9.1.043
-Release:	0.%{_snap}.3
+Release:	0.%{_snap}.%{rel}
 License:	BSD
 Group:		Libraries
 Source0:	%{name}-%{version}-%{_snap}.tar.bz2
