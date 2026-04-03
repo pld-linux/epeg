@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 %define		_snap	20080813
-%define		rel	4
+%define		rel	5
 Summary:	JPEG Scaling Library
 Summary(pl.UTF-8):	Biblioteka do skalowania JPEG-ów
 Name:		epeg
